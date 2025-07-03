@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - TravelExplore</title>
+    <meta name="description" content="Book your perfect vacation with TravelExplore">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/booking.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>TravelExplore</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+                <li><a href="booking.html" class="nav-link active">Booking</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Book Your Adventure</h1>
+            <p>Plan your perfect trip with our easy booking system</p>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-container">
+                <div class="booking-form-container">
+                    <form class="booking-form" id="booking-form">
+                        <div class="form-step active" id="step-1">
+                            <h2>Trip Details</h2>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="destination">Destination</label>
+                                    <select id="destination" name="destination" required>
+                                        <option value="">Select a destination</option>
+                                        <option value="paris">Paris, France</option>
+                                        <option value="tokyo">Tokyo, Japan</option>
+                                        <option value="bali">Bali, Indonesia</option>
+                                        <option value="santorini">Santorini, Greece</option>
+                                        <option value="maldives">Maldives</option>
+                                        <option value="iceland">Iceland</option>
+                                        <option value="dubai">Dubai, UAE</option>
+                                        <option value="new-york">New York, USA</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="trip-type">Trip Type</label>
+                                    <select id="trip-type" name="trip-type" required>
+                                        <option value="">Select trip type</option>
+                                        <option value="leisure">Leisure</option>
+                                        <option value="business">Business</option>
+                                        <option value="adventure">Adventure</option>
+                                        <option value="romantic">Romantic</option>
+                                        <option value="family">Family</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="check-in">Check-in Date</label>
+                                    <input type="date" id="check-in" name="check-in" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="check-out">Check-out Date</label>
+                                    <input type="date" id="check-out" name="check-out" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="adults">Adults</label>
+                                    <div class="counter">
+                                        <button type="button" class="counter-btn" data-action="decrease" data-target="adults">-</button>
+                                        <input type="number" id="adults" name="adults" value="2" min="1" max="10" readonly>
+                                        <button type="button" class="counter-btn" data-action="increase" data-target="adults">+</button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="children">Children</label>
+                                    <div class="counter">
+                                        <button type="button" class="counter-btn" data-action="decrease" data-target="children">-</button>
+                                        <input type="number" id="children" name="children" value="0" min="0" max="10" readonly>
+                                        <button type="button" class="counter-btn" data-action="increase" data-target="children">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-primary next-step">Next Step</button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" id="step-2">
+                            <h2>Personal Information</h2>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" id="first-name" name="first-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" id="last-name" name="last-name" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <textarea id="address" name="address" rows="3" required></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline prev-step">Previous</button>
+                                <button type="button" class="btn btn-primary next-step">Next Step</button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" id="step-3">
+                            <h2>Additional Services</h2>
+                            <div class="services-grid">
+                                <label class="service-option">
+                                    <input type="checkbox" name="services" value="airport-transfer">
+                                    <div class="service-card">
+                                        <div class="service-icon">
+                                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                            </svg>
+                                        </div>
+                                        <h3>Airport Transfer</h3>
+                                        <p>Comfortable transportation to and from the airport</p>
+                                        <span class="price">+$50</span>
+                                    </div>
+                                </label>
+                                <label class="service-option">
+                                    <input type="checkbox" name="services" value="travel-insurance">
+                                    <div class="service-card">
+                                        <div class="service-icon">
+                                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                            </svg>
+                                        </div>
+                                        <h3>Travel Insurance</h3>
+                                        <p>Comprehensive coverage for your peace of mind</p>
+                                        <span class="price">+$75</span>
+                                    </div>
+                                </label>
+                                <label class="service-option">
+                                    <input type="checkbox" name="services" value="tour-guide">
+                                    <div class="service-card">
+                                        <div class="service-icon">
+                                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                                <circle cx="12" cy="7" r="4"/>
+                                            </svg>
+                                        </div>
+                                        <h3>Personal Tour Guide</h3>
+                                        <p>Expert local guide for personalized experience</p>
+                                        <span class="price">+$120</span>
+                                    </div>
+                                </label>
+                                <label class="service-option">
+                                    <input type="checkbox" name="services" value="meal-plan">
+                                    <div class="service-card">
+                                        <div class="service-icon">
+                                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                                            </svg>
+                                        </div>
+                                        <h3>All-Inclusive Meals</h3>
+                                        <p>Breakfast, lunch, and dinner included</p>
+                                        <span class="price">+$200</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline prev-step">Previous</button>
+                                <button type="button" class="btn btn-primary next-step">Review Booking</button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" id="step-4">
+                            <h2>Booking Summary</h2>
+                            <div class="booking-summary" id="booking-summary">
+                                <!-- Summary will be generated dynamically -->
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline prev-step">Previous</button>
+                                <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="booking-sidebar">
+                    <div class="progress-indicator">
+                        <div class="progress-step active" data-step="1">
+                            <div class="step-number">1</div>
+                            <div class="step-label">Trip Details</div>
+                        </div>
+                        <div class="progress-step" data-step="2">
+                            <div class="step-number">2</div>
+                            <div class="step-label">Personal Info</div>
+                        </div>
+                        <div class="progress-step" data-step="3">
+                            <div class="step-number">3</div>
+                            <div class="step-label">Services</div>
+                        </div>
+                        <div class="progress-step" data-step="4">
+                            <div class="step-number">4</div>
+                            <div class="step-label">Review</div>
+                        </div>
+                    </div>
+
+                    <div class="price-breakdown">
+                        <h3>Price Breakdown</h3>
+                        <div class="price-item">
+                            <span>Base Price</span>
+                            <span id="base-price">$0</span>
+                        </div>
+                        <div class="price-item">
+                            <span>Additional Services</span>
+                            <span id="services-price">$0</span>
+                        </div>
+                        <div class="price-item total">
+                            <span>Total</span>
+                            <span id="total-price">$0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <div class="success-content">
+                <div class="success-icon">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22,4 12,14.01 9,11.01"/>
+                    </svg>
+                </div>
+                <h2>Booking Confirmed!</h2>
+                <p>Thank you for choosing TravelExplore. Your booking confirmation has been sent to your email.</p>
+                <div class="booking-reference">
+                    <strong>Booking Reference: <span id="booking-ref"></span></strong>
+                </div>
+                <button class="btn btn-primary" onclick="location.href='index.html'">Back to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <span>TravelExplore</span>
+                    </div>
+                    <p>Discover amazing destinations and create unforgettable memories with our curated travel experiences.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#cancellation">Cancellation Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <p>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            +1 (555) 123-4567
+                        </p>
+                        <p>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            info@travelexplore.com
+                        </p>
+                        <p>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            123 Travel Street, Adventure City
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TravelExplore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/booking.js"></script>
+</body>
+</html>
