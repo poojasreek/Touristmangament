@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | NeoMart - Modern eCommerce Experience</title>
+    <meta name="description" content="Browse our extensive collection of premium products with fast filtering and search">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            50: '#f0f4ff',
+                            100: '#e0eaff',
+                            200: '#c7d7fe',
+                            300: '#a5bbfc',
+                            400: '#8195f8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                            950: '#1e1b4b'
+                        }
+                    },
+                    fontFamily: {
+                        'heading': ['Poppins', 'sans-serif'],
+                        'body': ['Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="font-body bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg" id="navbar">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-navy-800 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">N</span>
+                    </div>
+                    <span class="text-2xl font-heading font-bold text-navy-800">NeoMart</span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-navy-600 transition-colors font-medium">Home</a>
+                    <a href="products.html" class="text-navy-800 hover:text-navy-600 transition-colors font-medium">Products</a>
+                    <a href="about.html" class="text-gray-600 hover:text-navy-600 transition-colors font-medium">About</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-navy-600 transition-colors font-medium">Contact</a>
+                </div>
+                
+                <!-- User Actions -->
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 hover:bg-gray-100 rounded-full transition-colors relative" id="cartBtn">
+                        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293A1 1 0 005 16v0a1 1 0 001 1h11M17 21a2 2 0 100-4 2 2 0 000 4zM9 21a2 2 0 100-4 2 2 0 000 4z"></path>
+                        </svg>
+                        <span class="absolute -top-1 -right-1 bg-navy-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center" id="cartCount">0</span>
+                    </button>
+                    <button class="bg-navy-800 text-white px-6 py-2 rounded-lg hover:bg-navy-700 transition-colors font-medium" id="authBtn">
+                        Sign In
+                    </button>
+                    <button class="md:hidden p-2" id="mobileMenuBtn">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="hidden md:hidden mt-4 pb-4" id="mobileMenu">
+                <div class="flex flex-col space-y-3">
+                    <a href="index.html" class="text-gray-600 hover:text-navy-600 transition-colors font-medium">Home</a>
+                    <a href="products.html" class="text-navy-800 hover:text-navy-600 transition-colors font-medium">Products</a>
+                    <a href="about.html" class="text-gray-600 hover:text-navy-600 transition-colors font-medium">About</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-navy-600 transition-colors font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 bg-gradient-to-br from-navy-50 to-navy-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-4xl lg:text-5xl font-heading font-bold text-navy-800 mb-6">
+                    Discover Amazing Products
+                </h1>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+                    Browse our extensive collection of premium products, carefully curated for quality and style.
+                </p>
+                
+                <!-- Search Bar -->
+                <div class="max-w-2xl mx-auto relative">
+                    <input type="text" 
+                           placeholder="Search products..." 
+                           class="w-full px-6 py-4 pr-12 text-lg border-2 border-white bg-white rounded-xl shadow-lg focus:border-navy-500 focus:outline-none transition-colors"
+                           id="searchInput">
+                    <button class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-navy-600 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="lg:flex lg:gap-8">
+                <!-- Sidebar Filters -->
+                <div class="lg:w-1/4 mb-8 lg:mb-0">
+                    <div class="bg-white rounded-xl shadow-lg p-6 sticky top-24">
+                        <h3 class="text-xl font-heading font-bold text-navy-800 mb-6">Filters</h3>
+                        
+                        <!-- Category Filter -->
+                        <div class="mb-6">
+                            <h4 class="font-medium text-gray-900 mb-3">Category</h4>
+                            <div class="space-y-2" id="categoryFilters">
+                                <label class="flex items-center">
+                                    <input type="checkbox" value="all" class="category-filter text-navy-600 rounded" checked>
+                                    <span class="ml-2 text-gray-700">All Categories</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Price Range -->
+                        <div class="mb-6">
+                            <h4 class="font-medium text-gray-900 mb-3">Price Range</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="priceRange" value="all" class="text-navy-600" checked>
+                                    <span class="ml-2 text-gray-700">All Prices</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="priceRange" value="0-50" class="text-navy-600">
+                                    <span class="ml-2 text-gray-700">Under $50</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="priceRange" value="50-100" class="text-navy-600">
+                                    <span class="ml-2 text-gray-700">$50 - $100</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="priceRange" value="100-200" class="text-navy-600">
+                                    <span class="ml-2 text-gray-700">$100 - $200</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="priceRange" value="200-999" class="text-navy-600">
+                                    <span class="ml-2 text-gray-700">Over $200</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Rating Filter -->
+                        <div class="mb-6">
+                            <h4 class="font-medium text-gray-900 mb-3">Rating</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="rating" value="all" class="text-navy-600" checked>
+                                    <span class="ml-2 text-gray-700">All Ratings</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="rating" value="4" class="text-navy-600">
+                                    <span class="ml-2 text-gray-700">4+ Stars</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="rating" value="3" class="text-navy-600">
+                                    <span class="ml-2 text-gray-700">3+ Stars</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Clear Filters -->
+                        <button class="w-full bg-gray-100 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors" id="clearFilters">
+                            Clear All Filters
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Products Grid -->
+                <div class="lg:w-3/4">
+                    <!-- Sort & View Options -->
+                    <div class="bg-white rounded-xl shadow-lg p-4 mb-6">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                            <div class="mb-4 sm:mb-0">
+                                <span class="text-gray-600" id="resultsCount">Showing 0 products</span>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <div class="flex items-center space-x-2">
+                                    <label class="text-gray-600 text-sm">Sort by:</label>
+                                    <select class="border border-gray-300 rounded-lg px-3 py-1 text-sm" id="sortSelect">
+                                        <option value="name">Name</option>
+                                        <option value="price-low">Price: Low to High</option>
+                                        <option value="price-high">Price: High to Low</option>
+                                        <option value="rating">Rating</option>
+                                        <option value="newest">Newest</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="flex items-center space-x-1">
+                                    <button class="p-2 rounded border hover:bg-gray-50 transition-colors active" id="gridView">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
+                                        </svg>
+                                    </button>
+                                    <button class="p-2 rounded border hover:bg-gray-50 transition-colors" id="listView">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Loading State -->
+                    <div class="text-center py-12 hidden" id="loadingState">
+                        <div class="spinner mx-auto mb-4"></div>
+                        <p class="text-gray-600">Loading products...</p>
+                    </div>
+                    
+                    <!-- No Results -->
+                    <div class="text-center py-12 hidden" id="noResults">
+                        <div class="text-gray-400 mb-4">
+                            <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">No products found</h3>
+                        <p class="text-gray-600">Try adjusting your filters or search terms</p>
+                    </div>
+                    
+                    <!-- Products Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="productsGrid">
+                        <!-- Products will be loaded dynamically -->
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="flex justify-center mt-12">
+                        <nav class="flex items-center space-x-2" id="pagination">
+                            <!-- Pagination buttons will be generated dynamically -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                            <span class="text-navy-800 font-bold text-xl">N</span>
+                        </div>
+                        <span class="text-2xl font-heading font-bold">NeoMart</span>
+                    </div>
+                    <p class="text-navy-200 mb-6">
+                        Your destination for modern shopping with seamless experience and premium products.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-heading font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-navy-200 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="products.html" class="text-navy-200 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="about.html" class="text-navy-200 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="text-navy-200 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-heading font-bold mb-6">Customer Service</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-navy-200 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-navy-200 hover:text-white transition-colors">Shipping Info</a></li>
+                        <li><a href="#" class="text-navy-200 hover:text-white transition-colors">Returns</a></li>
+                        <li><a href="#" class="text-navy-200 hover:text-white transition-colors">Size Guide</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-heading font-bold mb-6">Contact Info</h3>
+                    <div class="space-y-3">
+                        <p class="text-navy-200">
+                            <span class="block font-medium">Email:</span>
+                            support@neomart.com
+                        </p>
+                        <p class="text-navy-200">
+                            <span class="block font-medium">Phone:</span>
+                            +1 (555) 123-4567
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-navy-700 mt-12 pt-8 text-center">
+                <p class="text-navy-200">
+                    &copy; 2024 NeoMart. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="scripts/firebase-config.js" type="module"></script>
+    <script src="scripts/utils.js" type="module"></script>
+    <script src="scripts/cart.js" type="module"></script>
+    <script src="scripts/auth.js" type="module"></script>
+    <script src="scripts/products.js" type="module"></script>
+</body>
+</html>
