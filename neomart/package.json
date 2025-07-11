@@ -1,0 +1,17 @@
+{
+  "name": "neomart-ecommerce",
+  "version": "1.0.0",
+  "description": "A modern eCommerce website built with HTML5, CSS3, JavaScript ES6+, and Firebase",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 8000 -c-1 --cors",
+    "dev": "http-server -p 8000 -c-1 --cors -o",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": ["ecommerce", "javascript", "firebase", "html5", "css3"],
+  "author": "NeoMart Team",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

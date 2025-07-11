@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | NeoMart - Modern eCommerce Experience</title>
+    <meta name="description" content="Learn about NeoMart's mission, values, and the team behind the modern shopping experience">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            50: '#f0f4ff',
+                            100: '#e0eaff',
+                            200: '#c7d7fe',
+                            300: '#a5bbfc',
+                            400: '#8195f8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                            950: '#1e1b4b'
+                        }
+                    },
+                    fontFamily: {
+                        'heading': ['Poppins', 'sans-serif'],
+                        'body': ['Roboto', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="font-body">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg" id="navbar">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-navy-800 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">N</span>
+                    </div>
+                    <span class="text-2xl font-heading font-bold text-navy-800">NeoMart</span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-navy-600 transition-colors font-medium">Home</a>
+                    <a href="products.html" class="text-gray-600 hover:text-navy-600 transition-colors font-medium">Products</a>
+                    <a href="about.html" class="text-navy-800 hover:text-navy-600 transition-colors font-medium">About</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-navy-600 transition-colors font-medium">Contact</a>
+                </div>
+                
+                <!-- User Actions -->
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 hover:bg-gray-100 rounded-full transition-colors relative" id="cartBtn">
+                        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293A1 1 0 005 16v0a1 1 0 001 1h11M17 21a2 2 0 100-4 2 2 0 000 4zM9 21a2 2 0 100-4 2 2 0 000 4z"></path>
+                        </svg>
+                        <span class="absolute -top-1 -right-1 bg-navy-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center" id="cartCount">0</span>
+                    </button>
+                    <button class="bg-navy-800 text-white px-6 py-2 rounded-lg hover:bg-navy-700 transition-colors font-medium" id="authBtn">
+                        Sign In
+                    </button>
+                    <button class="md:hidden p-2" id="mobileMenuBtn">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="hidden md:hidden mt-4 pb-4" id="mobileMenu">
+                <div class="flex flex-col space-y-3">
+                    <a href="index.html" class="text-gray-600 hover:text-navy-600 transition-colors font-medium">Home</a>
+                    <a href="products.html" class="text-gray-600 hover:text-navy-600 transition-colors font-medium">Products</a>
+                    <a href="about.html" class="text-navy-800 hover:text-navy-600 transition-colors font-medium">About</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-navy-600 transition-colors font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-br from-navy-50 to-navy-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                <h1 class="text-5xl lg:text-6xl font-heading font-bold text-navy-800 mb-6">
+                    About NeoMart
+                </h1>
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    We're revolutionizing the way people shop online by combining cutting-edge technology 
+                    with exceptional customer service to create meaningful shopping experiences.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-heading font-bold text-navy-800 mb-6">
+                        Our Story
+                    </h2>
+                    <div class="space-y-4 text-lg text-gray-600 leading-relaxed">
+                        <p>
+                            Founded in 2020, NeoMart began with a simple vision: to create an online shopping 
+                            platform that truly understands and serves its customers. What started as a small 
+                            team of passionate entrepreneurs has grown into a trusted destination for millions 
+                            of shoppers worldwide.
+                        </p>
+                        <p>
+                            We believe that shopping should be more than just a transaction—it should be an 
+                            experience that delights, inspires, and connects people with products they love. 
+                            That's why we've built our platform from the ground up with user experience at 
+                            the forefront of everything we do.
+                        </p>
+                        <p>
+                            Today, we continue to innovate and push boundaries, always with our customers' 
+                            needs in mind. From our seamless interface to our lightning-fast delivery, 
+                            every aspect of NeoMart is designed to exceed expectations.
+                        </p>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <div class="relative">
+                        <div class="bg-navy-100 rounded-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                            <div class="bg-white rounded-xl p-8 text-center">
+                                <div class="w-20 h-20 bg-navy-800 rounded-full mx-auto mb-6 flex items-center justify-center">
+                                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-2xl font-heading font-bold text-navy-800 mb-4">Innovation First</h3>
+                                <p class="text-gray-600">
+                                    We're constantly pushing the boundaries of what's possible in eCommerce.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-heading font-bold text-navy-800 mb-6">
+                    Our Values
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    These core principles guide everything we do and shape the way we serve our customers.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold text-navy-800 mb-4">Customer-Centric</h3>
+                    <p class="text-gray-600">Every decision we make is guided by what's best for our customers and their shopping experience.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-green-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold text-navy-800 mb-4">Quality First</h3>
+                    <p class="text-gray-600">We curate only the finest products from trusted brands and verified sellers around the world.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold text-navy-800 mb-4">Innovation</h3>
+                    <p class="text-gray-600">We embrace new technologies and ideas to continuously improve our platform and services.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold text-navy-800 mb-4">Community</h3>
+                    <p class="text-gray-600">We foster a sense of community among our customers, partners, and team members.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-16 h-16 bg-red-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold text-navy-800 mb-4">Trust</h3>
+                    <p class="text-gray-600">We build lasting relationships through transparency, reliability, and consistent excellence.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-16 h-16 bg-teal-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold text-navy-800 mb-4">Sustainability</h3>
+                    <p class="text-gray-600">We're committed to sustainable practices that benefit our planet and future generations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-heading font-bold text-navy-800 mb-6">
+                    Meet Our Team
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    The passionate individuals behind NeoMart who work tirelessly to bring you the best shopping experience.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative mb-6">
+                        <div class="w-48 h-48 mx-auto rounded-full bg-gradient-to-br from-navy-400 to-navy-600 p-1">
+                            <div class="w-full h-full rounded-full bg-navy-100 flex items-center justify-center">
+                                <div class="w-24 h-24 bg-navy-800 rounded-full flex items-center justify-center">
+                                    <span class="text-2xl font-bold text-white">AS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-navy-800 mb-2">Alex Smith</h3>
+                    <p class="text-navy-600 font-medium mb-2">CEO & Founder</p>
+                    <p class="text-gray-600 text-sm">Visionary leader with 15+ years in eCommerce and technology innovation.</p>
+                </div>
+                
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative mb-6">
+                        <div class="w-48 h-48 mx-auto rounded-full bg-gradient-to-br from-navy-400 to-navy-600 p-1">
+                            <div class="w-full h-full rounded-full bg-navy-100 flex items-center justify-center">
+                                <div class="w-24 h-24 bg-navy-800 rounded-full flex items-center justify-center">
+                                    <span class="text-2xl font-bold text-white">SJ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-navy-800 mb-2">Sarah Johnson</h3>
+                    <p class="text-navy-600 font-medium mb-2">CTO</p>
+                    <p class="text-gray-600 text-sm">Technology expert driving our platform's technical excellence and scalability.</p>
+                </div>
+                
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative mb-6">
+                        <div class="w-48 h-48 mx-auto rounded-full bg-gradient-to-br from-navy-400 to-navy-600 p-1">
+                            <div class="w-full h-full rounded-full bg-navy-100 flex items-center justify-center">
+                                <div class="w-24 h-24 bg-navy-800 rounded-full flex items-center justify-center">
+                                    <span class="text-2xl font-bold text-white">MC</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-navy-800 mb-2">Michael Chen</h3>
+                    <p class="text-navy-600 font-medium mb-2">Head of Design</p>
+                    <p class="text-gray-600 text-sm">Creative director ensuring every interaction is beautiful and intuitive.</p>
+                </div>
+                
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative mb-6">
+                        <div class="w-48 h-48 mx-auto rounded-full bg-gradient-to-br from-navy-400 to-navy-600 p-1">
+                            <div class="w-full h-full rounded-full bg-navy-100 flex items-center justify-center">
+                                <div class="w-24 h-24 bg-navy-800 rounded-full flex items-center justify-center">
+                                    <span class="text-2xl font-bold text-white">EP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-navy-800 mb-2">Emily Parker</h3>
+                    <p class="text-navy-600 font-medium mb-2">Customer Success Manager</p>
+                    <p class="text-gray-600 text-sm">Dedicated to ensuring every customer has an exceptional experience with us.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-navy-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl lg:text-5xl font-heading font-bold text-white mb-2">10M+</div>
+                    <div class="text-navy-200 text-lg">Happy Customers</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl lg:text-5xl font-heading font-bold text-white mb-2">50K+</div>
+                    <div class="text-navy-200 text-lg">Products</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl lg:text-5xl font-heading font-bold text-white mb-2">99.9%</div>
+                    <div class="text-navy-200 text-lg">Uptime</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-4xl lg:text-5xl font-heading font-bold text-white mb-2">24/7</div>
+                    <div class="text-navy-200 text-lg">Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-navy-50 to-navy-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                <h2 class="text-4xl lg:text-5xl font-heading font-bold text-navy-800 mb-6">
+                    Ready to Experience NeoMart?
+                </h2>
+                <p class="text-xl text-gray-600 mb-8">
+                    Join millions of satisfied customers and discover why NeoMart is the future of online shopping.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="products.html" class="bg-navy-800 text-white px-8 py-4 rounded-xl hover:bg-navy-700 transition-all duration-300 transform hover:scale-105 font-medium text-lg">
+                        Shop Now
+                    </a>
+                    <a href="contact.html" class="border-2 border-navy-800 text-navy-800 px-8 py-4 rounded-xl hover:bg-navy-800 hover:text-white transition-all duration-300 font-medium text-lg">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                            <span class="text-navy-800 font-bold text-xl">N</span>
+                        </div>
+                        <span class="text-2xl font-heading font-bold">NeoMart</span>
+                    </div>
+                    <p class="text-navy-200 mb-6">
+                        Your destination for modern shopping with seamless experience and premium products.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-navy-700 rounded-full flex items-center justify-center hover:bg-navy-600 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-navy-700 rounded-full flex items-center justify-center hover:bg-navy-600 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-navy-700 rounded-full flex items-center justify-center hover:bg-navy-600 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.222.085.343-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001 12.017.001z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-heading font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-navy-200 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="products.html" class="text-navy-200 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="about.html" class="text-navy-200 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="text-navy-200 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-heading font-bold mb-6">Customer Service</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-navy-200 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-navy-200 hover:text-white transition-colors">Shipping Info</a></li>
+                        <li><a href="#" class="text-navy-200 hover:text-white transition-colors">Returns</a></li>
+                        <li><a href="#" class="text-navy-200 hover:text-white transition-colors">Size Guide</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-heading font-bold mb-6">Contact Info</h3>
+                    <div class="space-y-3">
+                        <p class="text-navy-200">
+                            <span class="block font-medium">Email:</span>
+                            support@neomart.com
+                        </p>
+                        <p class="text-navy-200">
+                            <span class="block font-medium">Phone:</span>
+                            +1 (555) 123-4567
+                        </p>
+                        <p class="text-navy-200">
+                            <span class="block font-medium">Address:</span>
+                            123 Commerce St, City, State 12345
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-navy-700 mt-12 pt-8 text-center">
+                <p class="text-navy-200">
+                    &copy; 2024 NeoMart. All rights reserved. | Privacy Policy | Terms of Service
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="scripts/firebase-config.js" type="module"></script>
+    <script src="scripts/utils.js" type="module"></script>
+    <script src="scripts/cart.js" type="module"></script>
+    <script src="scripts/auth.js" type="module"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
